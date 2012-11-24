@@ -1,0 +1,19 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body{ }
+.row_t{ display:table; width:90%;  margin:0 auto;}
+.cell_t_left{ display:table-cell; padding-left:10px; float:left; overflow:hidden;}
+.cell_t_right{ display:table-cell; padding-right: 10px; float:right; overflow:hidden;}
+.ui-slider1{width: 210%; }

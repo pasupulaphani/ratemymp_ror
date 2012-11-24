@@ -1,0 +1,146 @@
+<!--<h1>Mp#view</h1>
+<p>Find me in app/views/mp/view.html.erb</p>-->
+
+<!-- Start of first page: #one -->
+<div data-role="page" id="one">
+
+  <div data-role="header">
+    <h1>My opinions</h1>
+  </div><!-- /header -->
+
+  <div data-role="fieldcontain" >
+    <div data-role="fieldcontain"><br /><br />
+      <b><label for="pc">Postcode:</label></b>
+      <input type="text" name="pc" id="pc" value=""  />
+    </div><br />
+    
+    <p>About Myself</p><br />
+
+    <div class="row_t">
+      <label for="liberty_slide"></label>
+      <div class="cell_t_left">Genghis Khan</div>
+      <div class="cell_t_right">Bambi</div>
+    </div>
+    <div class="ui-slider1">
+      <input type="hidden" data-type="range" name="cultural_slide" id="cultural_slide" value="50" min="0" max="100" data-highlight="true" /><br /><br />
+    </div><br />
+
+    <div class="row_t">
+      <label for="europe_slide"></label>
+      <div class="cell_t_left">Anti-EU</div>
+      <div class="cell_t_right">Pro-EU</div>
+    </div>
+    <div class="ui-slider1">
+      <input type="hidden" data-type="range" name="economic_slide" id="economic_slide" value="50" min="0" max="100" data-highlight="true" /><br /><br />
+    </div><br />
+
+    <div class="row_t">
+      <label for="tolerence_slide"></label>
+      <div class="cell_t_left">Anti-terroism</div>
+      <div class="cell_t_right">Freedom of speech</div>
+    </div>
+    <div class="ui-slider1">
+      <input type="hidden" data-type="range" name="tolerence_slide" id="tolerence_slide" value="50" min="0" max="100" data-highlight="true" /><br /><br />
+    </div><br />
+
+    <div class="row_t">
+      <label for="education_slide"></label>
+      <div class="cell_t_left">Parents know best</div>
+      <div class="cell_t_right">Teachers know best</div>
+    </div>
+    <div class="ui-slider1">
+      <input type="hidden" data-type="range" name="education_slide" id="education_slide" value="50" min="0" max="100" data-highlight="true" /><br /><br />
+    </div><br />
+
+    <p><a onClick="postcode()" data-role="button">next</a></p>
+          
+    <br /><br /><br /><br />
+  </div><!-- /content -->
+  
+  <div data-role="footer" data-theme="d">
+          <h4>Thanks for filling</h4>
+  </div><!-- /footer -->
+</div><!-- /page one -->
+
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="two">
+
+  <div data-role="header">
+    <h1>My MP</h1>
+  </div><!-- /header -->
+
+  <div data-role="fieldcontain" >	
+    <h3 id="mpName"></h3>
+    <img src="" id="mpPhoto" /><br /><br />
+
+    <p> <b id="mpName">My MP's opinions</b>
+    </p><br />
+
+    <div class="row_t">
+      <label for="honesty_slide"></label>
+      <div class="cell_t_left">Pinocchio</div>
+      <div class="cell_t_right">Gandhi</div>
+    </div>
+    <div class="ui-slider1">
+      <input type="hidden" data-type="range" name="honesty_slide" id="honesty_slide" value="50" min="0" max="100" data-highlight="true" /><br /><br />
+    </div><br />
+
+    <div class="row_t">
+      <label for="europe_slide"></label>
+      <div class="cell_t_left">Anti-EU</div>
+      <div class="cell_t_right">Pro-EU</div>
+    </div>
+    <div class="ui-slider1">
+      <input type="hidden" data-type="range" name="economic_slide" id="economic_slide" value="50" min="0" max="100" data-highlight="true" /><br /><br />
+    </div><br />
+
+    <div class="row_t">
+      <label for="tolerence_slide"></label>
+      <div class="cell_t_left">Anti-terroism</div>
+      <div class="cell_t_right">Freedom of speech</div>
+    </div>
+    <div class="ui-slider1">
+      <input type="hidden" data-type="range" name="tolerence_slide" id="tolerence_slide" value="50" min="0" max="100" data-highlight="true" /><br /><br />
+    </div><br />
+
+    <div class="row_t">
+      <label for="education_slide"></label>
+      <div class="cell_t_left">Parents know best</div>
+      <div class="cell_t_right">Teachers know best</div>
+    </div>
+    <div class="ui-slider1">
+      <input type="hidden" data-type="range" name="education_slide" id="education_slide" value="50" min="0" max="100" data-highlight="true" /><br /><br />
+    </div><br />
+
+    <p><a href="#two" data-role="button">Send your ratings</a></p>
+
+    <br /><br /><br /><br />
+  </div><!-- /content -->
+	
+  <div data-role="footer">
+    <h4>Thanks for filling</h4>
+  </div><!-- /footer -->
+</div><!-- /page two -->
+
+
+<!-- Start of third page: #popup -->
+<div data-role="page" id="popup">
+
+	<div data-role="header" data-theme="e">
+		<h1>Dialog</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="d">	
+		<h2>Popup</h2>
+		<p>I have an id of "popup" on my page container and only look like a dialog because the link to me had a <code>data-rel="dialog"</code> attribute which gives me this inset look and a <code>data-transition="pop"</code> attribute to change the transition to pop. Without this, I'd be styled as a normal page.</p>		
+		<p><a href="#one" data-rel="back" data-role="button" data-inline="true" data-icon="back">Back to page "one"</a></p>	
+	</div><!-- /content -->
+	
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page popup -->
+
+</body>
+</html>
