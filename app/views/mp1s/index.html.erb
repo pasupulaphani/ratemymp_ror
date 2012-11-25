@@ -1,0 +1,31 @@
+<h1>Listing mp1s</h1>
+
+<table>
+  <tr>
+    <th>Twfy mpid</th>
+    <th>Rating1</th>
+    <th>Rating2</th>
+    <th>Rating3</th>
+    <th>Rating4</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mp1s.each do |mp1| %>
+  <tr>
+    <td><%= mp1.twfy_mpid %></td>
+    <td><%= mp1.rating1 %></td>
+    <td><%= mp1.rating2 %></td>
+    <td><%= mp1.rating3 %></td>
+    <td><%= mp1.rating4 %></td>
+    <td><%= link_to 'Show', mp1 %></td>
+    <td><%= link_to 'Edit', edit_mp1_path(mp1) %></td>
+    <td><%= link_to 'Destroy', mp1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mp1', new_mp1_path %>

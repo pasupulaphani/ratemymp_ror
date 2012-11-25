@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  twfy_mpid: 1
+  rating1: 1
+  rating2: 1
+  rating3: 1
+  rating4: 1
+
+two:
+  twfy_mpid: 1
+  rating1: 1
+  rating2: 1
+  rating3: 1
+  rating4: 1

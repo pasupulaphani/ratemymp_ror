@@ -1,0 +1,22 @@
+<!--<h1>Mp#view</h1>
+<p>Find me in app/views/mp/view.html.erb</p>-->
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>rating1</th>
+    <th>rating2</th>
+    <th>rating3</th>
+    <th>rating4</th>
+  </tr>
+
+<% @mps.each do |mp| %>
+  <tr>
+    <td><%= mp.id %></td>
+    <td><%= mp.rating1 %></td>
+    <td><%= mp.rating2 %></td>
+    <td><%= mp.rating3 %></td>
+    <td><%= mp.rating4 %></td>
+  </tr>
+<% end %>
+</table>
