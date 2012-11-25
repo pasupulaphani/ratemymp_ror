@@ -5,7 +5,7 @@
     <h1>My opinions</h1>
   </div><!-- /header -->
   
-<%= form_for(@mp1) do |f| %>
+<%= form_for(@mp1, :html => { :name => "my_form"}) do |f| %>
   <% if @mp1.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@mp1.errors.count, "error") %> prohibited this mp1 from being saved:</h2>
@@ -62,7 +62,7 @@
     </div><br />
 
   <% end %>
-
+<%= f.submit  %>
     <p><a onClick="postcode()" data-role="button">next</a></p>
 
     <br /><br /><br /><br />
@@ -93,7 +93,7 @@
       <div class="cell_t_left">Pinocchio</div>
       <div class="cell_t_right">Gandhi</div>
     </div>
-    <div class="ui-slider1">
+    <div class="ui-slider1" style="width: 220%;">
       <%= f.hidden_field :rating1, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
     </div><br />
 
@@ -102,7 +102,7 @@
       <div class="cell_t_left">Anti-EU</div>
       <div class="cell_t_right">Pro-EU</div>
     </div>
-    <div class="ui-slider1">
+    <div class="ui-slider1" style="width: 220%;">
       <%= f.hidden_field :rating2, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
     </div><br />
 
@@ -111,7 +111,7 @@
       <div class="cell_t_left">Anti-terroism</div>
       <div class="cell_t_right">Freedom of speech</div>
     </div>
-    <div class="ui-slider1">
+    <div class="ui-slider1" style="width: 220%;">
       <%= f.hidden_field :rating3, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
     </div><br />
 
@@ -120,16 +120,24 @@
       <div class="cell_t_left">Parents know best</div>
       <div class="cell_t_right">Teachers know best</div>
     </div>
-    <div class="ui-slider1">
+    <div class="ui-slider1" style="width: 220%;">
       <%= f.hidden_field :rating4, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
     </div><br />
 
   <div class="actions">
-    <%= f.submit  %>
+    <a onClick="submit()" data-role="button">submit ur ratings</a>
   </div>
 <% end %>
 
 </div>
+
+<script>
+function submit()
+{
+  document.my_form.submit();
+  location.hash = "#three";
+}
+</script>
 
 <!-- Start of final page: #three -->
 <div data-role="page" id="three">
