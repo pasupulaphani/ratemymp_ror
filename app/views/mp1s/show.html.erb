@@ -4,27 +4,45 @@
 <div data-role="page" id="one">
 
   <div data-role="header">
-    <h1>Political Positions</h1>
+    <h1>Positioning</h1>
   </div><!-- /header -->
 
-	<div data-role="content">	
-		<div id="visualization" style="width: 420px; height: 420px;"></div>
+	<div data-role="content" style="text-align: center;">	
+		<div id="visualization" style="width: 420px; height: 420px; "></div>
 	</div><!-- /content -->
 
+        <a onClick="close()" data-role="button">close</a>
 </div>
+
+
+
 
 <script src="http://www.google.com/jsapi"></script>
 <script>
+  window.onload = show_graph;
+  
+  function close() {
+    window.location = "http://ratemymp.herokuapp.com";
+  }
+  
+  function show_graph() {
+    <% for pc in @mp1.pcs %>
+    var me_x = (<%= pc.rating1 %> + <%= pc.rating3 %> + <%= pc.rating4 %>) / 3;
+    var me_y = (<%= pc.rating2 %> ) ;
+    <% end %>
+    
+    drawVisualization(me_x,me_y)
+  }
 google.load('visualization', '1', {packages: ['corechart']});
 
-function drawVisualization() {
+function drawVisualization(me_x,me_y) {
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'ID');
     data.addColumn('number', 'X');
     data.addColumn('number', 'Y');
     data.addColumn('number', 'Size');
     
-    data.addRow(['Me', 60, 55, 0.8]);
+    data.addRow(['Me', me_x, me_y, 0.8]);
     data.addRow(['My MP', 25, 10, 1.2]);
 
     // Create and draw the visualization.
