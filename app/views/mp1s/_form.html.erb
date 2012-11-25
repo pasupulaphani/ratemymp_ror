@@ -62,7 +62,7 @@
     </div><br />
 
   <% end %>
-<%= f.submit  %>
+
     <p><a onClick="postcode()" data-role="button">next</a></p>
 
     <br /><br /><br /><br />
@@ -85,7 +85,7 @@
     <h3 id="mpName"></h3>
     <img src="" id="mpPhoto" /><br /><br />
 
-    <p> <b id="mpName">My MP's opinions</b>
+    <p> <b id="mpName">Rate my MP's opinions</b>
     </p><br />
 
     <div class="row_t">
@@ -93,7 +93,7 @@
       <div class="cell_t_left">Pinocchio</div>
       <div class="cell_t_right">Gandhi</div>
     </div>
-    <div class="ui-slider1" style="width: 220%;">
+    <div class="ui-slider1" >
       <%= f.hidden_field :rating1, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
     </div><br />
 
@@ -102,7 +102,7 @@
       <div class="cell_t_left">Anti-EU</div>
       <div class="cell_t_right">Pro-EU</div>
     </div>
-    <div class="ui-slider1" style="width: 220%;">
+    <div class="ui-slider1">
       <%= f.hidden_field :rating2, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
     </div><br />
 
@@ -111,7 +111,7 @@
       <div class="cell_t_left">Anti-terroism</div>
       <div class="cell_t_right">Freedom of speech</div>
     </div>
-    <div class="ui-slider1" style="width: 220%;">
+    <div class="ui-slider1" >
       <%= f.hidden_field :rating3, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
     </div><br />
 
@@ -120,12 +120,12 @@
       <div class="cell_t_left">Parents know best</div>
       <div class="cell_t_right">Teachers know best</div>
     </div>
-    <div class="ui-slider1" style="width: 220%;">
+    <div class="ui-slider1">
       <%= f.hidden_field :rating4, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
     </div><br />
 
   <div class="actions">
-    <a onClick="submit()" data-role="button">submit ur ratings</a>
+    <a onClick="submit()" data-role="button">submit your ratings</a>
   </div>
 <% end %>
 
@@ -135,45 +135,7 @@
 function submit()
 {
   document.my_form.submit();
-  location.hash = "#three";
 }
 </script>
 
-<!-- Start of final page: #three -->
-<div data-role="page" id="three">
 
-  <div data-role="header">
-    <h1>Political Positions</h1>
-  </div><!-- /header -->
-
-	<div data-role="content">	
-		<div id="visualization" style="width: 420px; height: 420px;"></div>
-	</div><!-- /content -->
-
-</div>
-
-<script src="http://www.google.com/jsapi"></script>
-<script>
-google.load('visualization', '1', {packages: ['corechart']});
-
-function drawVisualization() {
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'ID');
-    data.addColumn('number', 'X');
-    data.addColumn('number', 'Y');
-    data.addColumn('number', 'Size');
-    
-    data.addRow(['Me', 60, 55, 0.8]);
-    data.addRow(['My MP', 25, 10, 1.2]);
-
-    // Create and draw the visualization.
-    var chart = new google.visualization.BubbleChart(
-        document.getElementById('visualization'));
-    chart.draw(data, {width: 420, height: 420,
-                      vAxis: {title: "Cultural", minValue: 0, maxValue: 100, textStyle: {color: "white"}},
-                      hAxis: {title: "Economic", minValue: 0, maxValue: 100, textStyle: {color: "white"}},
-                      colorAxis: {legend: {position: 'none'}}}
-              );
-}
-
-</script>
