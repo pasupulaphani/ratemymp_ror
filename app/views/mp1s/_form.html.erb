@@ -1,3 +1,10 @@
+<!-- Start of first page: #one -->
+<div data-role="page" id="one">
+
+  <div data-role="header">
+    <h1>My opinions</h1>
+  </div><!-- /header -->
+  
 <%= form_for(@mp1) do |f| %>
   <% if @mp1.errors.any? %>
     <div id="error_explanation">
@@ -11,27 +18,115 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :twfy_mpid %><br />
-    <%= f.number_field :twfy_mpid %>
-  </div>
-  <div class="field">
-    <%= f.label :rating1 %><br />
-    <%= f.number_field :rating1 %>
-  </div>
-  <div class="field">
-    <%= f.label :rating2 %><br />
-    <%= f.number_field :rating2 %>
-  </div>
-  <div class="field">
-    <%= f.label :rating3 %><br />
-    <%= f.number_field :rating3 %>
-  </div>
-  <div class="field">
-    <%= f.label :rating4 %><br />
-    <%= f.number_field :rating4 %>
-  </div>
+  <%= f.fields_for :pcs do |builder| %>
+    
+    <div data-role="fieldcontain"><br /><br />
+      <b><%= builder.label :postcode, "Postcode" %></b>
+      <%= builder.text_field :postcode, :class => :postcode %>
+    </div><br />
+    
+    <div class="row_t">
+      <label for="liberty_slide"></label>
+      <div class="cell_t_left">Genghis Khan</div>
+      <div class="cell_t_right">Bambi</div>
+    </div>
+    <div class="ui-slider1">
+      <%= builder.hidden_field :rating1, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
+    </div><br />
+
+    <div class="row_t">
+      <label for="europe_slide"></label>
+      <div class="cell_t_left">Anti-EU</div>
+      <div class="cell_t_right">Pro-EU</div>
+    </div>
+    <div class="ui-slider1">
+      <%= builder.hidden_field :rating2, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
+    </div><br />
+
+    <div class="row_t">
+      <label for="tolerence_slide"></label>
+      <div class="cell_t_left">Anti-terroism</div>
+      <div class="cell_t_right">Freedom of speech</div>
+    </div>
+    <div class="ui-slider1">
+      <%= builder.hidden_field :rating3, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
+    </div><br />
+
+    <div class="row_t">
+      <label for="education_slide"></label>
+      <div class="cell_t_left">Parents know best</div>
+      <div class="cell_t_right">Teachers know best</div>
+    </div>
+    <div class="ui-slider1">
+      <%= builder.hidden_field :rating4, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
+    </div><br />
+
+  <% end %>
+
+    <p><a onClick="postcode()" data-role="button">next</a></p>
+          
+    <br /><br /><br /><br />
+  </div><!-- /content -->
+  
+  <div data-role="footer" data-theme="d">
+          <h4>Thanks for filling</h4>
+  </div><!-- /footer -->
+</div><!-- /page one -->
+
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="two">
+
+  <div data-role="header">
+    <h1>My MP</h1>
+  </div><!-- /header -->
+
+  <div data-role="fieldcontain" >	
+    <h3 id="mpName"></h3>
+    <img src="" id="mpPhoto" /><br /><br />
+
+    <p> <b id="mpName">My MP's opinions</b>
+    </p><br />
+
+    <div class="row_t">
+      <label for="honesty_slide"></label>
+      <div class="cell_t_left">Pinocchio</div>
+      <div class="cell_t_right">Gandhi</div>
+    </div>
+    <div class="ui-slider1">
+      <%= f.hidden_field :rating1, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
+    </div><br />
+
+    <div class="row_t">
+      <label for="europe_slide"></label>
+      <div class="cell_t_left">Anti-EU</div>
+      <div class="cell_t_right">Pro-EU</div>
+    </div>
+    <div class="ui-slider1">
+      <%= f.hidden_field :rating2, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
+    </div><br />
+
+    <div class="row_t">
+      <label for="tolerence_slide"></label>
+      <div class="cell_t_left">Anti-terroism</div>
+      <div class="cell_t_right">Freedom of speech</div>
+    </div>
+    <div class="ui-slider1">
+      <%= f.hidden_field :rating3, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
+    </div><br />
+
+    <div class="row_t">
+      <label for="education_slide"></label>
+      <div class="cell_t_left">Parents know best</div>
+      <div class="cell_t_right">Teachers know best</div>
+    </div>
+    <div class="ui-slider1">
+      <%= f.hidden_field :rating4, 'data-type' => :range, :value=>"50", :min=>"0", :max=>"100", 'data-highlight'=>"true"%>
+    </div><br />
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+</div>

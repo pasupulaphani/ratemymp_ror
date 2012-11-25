@@ -54,7 +54,7 @@ resources :mps
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'mp#new'
+  root :to => 'mp1s#new'
 
   # See how all your routes lay out with "rake routes"
 

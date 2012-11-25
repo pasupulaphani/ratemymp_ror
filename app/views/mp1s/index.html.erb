@@ -19,6 +19,16 @@
     <td><%= mp1.rating2 %></td>
     <td><%= mp1.rating3 %></td>
     <td><%= mp1.rating4 %></td>
+    <td>
+      <% for pc in mp1.pcs %>
+      <p>
+        <%= pc.postcode %>
+        <%= pc.rating1 %>
+        <%= pc.rating2 %>
+        <%= pc.rating3 %>
+        <%= pc.rating4 %>
+      </p></td>
+      <% end %>
     <td><%= link_to 'Show', mp1 %></td>
     <td><%= link_to 'Edit', edit_mp1_path(mp1) %></td>
     <td><%= link_to 'Destroy', mp1, method: :delete, data: { confirm: 'Are you sure?' } %></td>

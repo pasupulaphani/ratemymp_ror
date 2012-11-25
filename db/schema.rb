@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121124224233) do
+ActiveRecord::Schema.define(:version => 20121125101842) do
+
+  create_table "mp1s", :force => true do |t|
+    t.integer  "twfy_mpid"
+    t.integer  "rating1"
+    t.integer  "rating2"
+    t.integer  "rating3"
+    t.integer  "rating4"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "mp1_id"
+  end
 
   create_table "mps", :force => true do |t|
     t.integer  "twfy_mpid"
@@ -32,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20121124224233) do
     t.string   "postcode"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "mp1_id"
   end
 
 end

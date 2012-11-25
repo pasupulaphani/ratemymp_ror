@@ -15,7 +15,7 @@
 //= require_tree .
 
 var postcode = function() {
-	var postcode = $('#pc').val();
+	var postcode = $('.postcode').val();
 
 	$.jsonp({
 		url: "http://www.theyworkforyou.com/api/getMP?key=AeLEgrG66uiVBxMSy4BxmBmX&postcode=" + postcode + "&output=js&callback=?",

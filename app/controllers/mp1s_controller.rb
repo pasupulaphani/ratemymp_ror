@@ -25,6 +25,7 @@ class Mp1sController < ApplicationController
   # GET /mp1s/new.json
   def new
     @mp1 = Mp1.new
+    @mp1.pcs.build
 
     respond_to do |format|
       format.html # new.html.erb
