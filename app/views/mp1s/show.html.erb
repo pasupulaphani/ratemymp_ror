@@ -8,10 +8,10 @@
   </div><!-- /header -->
 
 	<div data-role="content" style="text-align: center;">	
-		<div id="visualization" style="width: 420px; height: 420px; "></div>
+		<div id="visualization" style="width: 320px; height: 320px; "></div>
 	</div><!-- /content -->
 
-        <a onClick="close()" data-role="button">close</a>
+        <a onClick="go_home()" data-role="button">Home</a>
 </div>
 
 
@@ -21,8 +21,8 @@
 <script>
   window.onload = show_graph;
   
-  function close() {
-    window.location = "http://ratemymp.herokuapp.com";
+  function go_home() {
+    window.location = "/";
   }
   
   function show_graph() {
@@ -48,7 +48,7 @@ function drawVisualization(me_x,me_y) {
     // Create and draw the visualization.
     var chart = new google.visualization.BubbleChart(
         document.getElementById('visualization'));
-    chart.draw(data, {width: 420, height: 420,
+    chart.draw(data, {width: 320, height: 320,
                       vAxis: {title: "Cultural", minValue: 0, maxValue: 100, textStyle: {color: "white"}},
                       hAxis: {title: "Economic", minValue: 0, maxValue: 100, textStyle: {color: "white"}},
                       colorAxis: {legend: {position: 'none'}}}
