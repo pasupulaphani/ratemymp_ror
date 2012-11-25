@@ -11,7 +11,7 @@
 		<div id="visualization" ></div>
 	</div><!-- /content -->
 
-        <a onClick="close()" data-role="button">close</a>
+        <a onClick="go_home()" data-role="button">Home</a>
 </div>
 
 
@@ -21,8 +21,8 @@
 <script>
   window.onload = show_graph;
   
-  function close() {
-    window.location = "http://ratemymp.herokuapp.com";
+  function go_home() {
+    window.location = "/";
   }
   
   function show_graph() {
