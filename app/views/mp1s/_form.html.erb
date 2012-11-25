@@ -130,3 +130,42 @@
 <% end %>
 
 </div>
+
+<!-- Start of final page: #three -->
+<div data-role="page" id="three">
+
+  <div data-role="header">
+    <h1>Political Positions</h1>
+  </div><!-- /header -->
+
+	<div data-role="content">	
+		<div id="visualization" style="width: 420px; height: 420px;"></div>
+	</div><!-- /content -->
+
+</div>
+
+<script src="http://www.google.com/jsapi"></script>
+<script>
+google.load('visualization', '1', {packages: ['corechart']});
+
+function drawVisualization() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'ID');
+    data.addColumn('number', 'X');
+    data.addColumn('number', 'Y');
+    data.addColumn('number', 'Size');
+    
+    data.addRow(['Me', 60, 55, 0.8]);
+    data.addRow(['My MP', 25, 10, 1.2]);
+
+    // Create and draw the visualization.
+    var chart = new google.visualization.BubbleChart(
+        document.getElementById('visualization'));
+    chart.draw(data, {width: 420, height: 420,
+                      vAxis: {title: "Cultural", minValue: 0, maxValue: 100, textStyle: {color: "white"}},
+                      hAxis: {title: "Economic", minValue: 0, maxValue: 100, textStyle: {color: "white"}},
+                      colorAxis: {legend: {position: 'none'}}}
+              );
+}
+
+</script>
