@@ -8,7 +8,7 @@
   </div><!-- /header -->
 
 	<div data-role="content" style="text-align: center;">	
-		<div id="visualization" style="width: 420px; height: 420px; "></div>
+		<div id="visualization" ></div>
 	</div><!-- /content -->
 
         <a onClick="close()" data-role="button">close</a>
@@ -45,10 +45,16 @@ function drawVisualization(me_x,me_y) {
     data.addRow(['Me', me_x, me_y, 0.8]);
     data.addRow(['My MP', 25, 10, 1.2]);
 
+    var width = screen.width;
+    var maxWidth = 600
+    if(width > maxWidth) {
+        width = maxWidth;
+    }
+
     // Create and draw the visualization.
     var chart = new google.visualization.BubbleChart(
         document.getElementById('visualization'));
-    chart.draw(data, {width: 420, height: 420,
+    chart.draw(data, {width: width, height: width,
                       vAxis: {title: "Cultural", minValue: 0, maxValue: 100, textStyle: {color: "white"}},
                       hAxis: {title: "Economic", minValue: 0, maxValue: 100, textStyle: {color: "white"}},
                       colorAxis: {legend: {position: 'none'}}}
