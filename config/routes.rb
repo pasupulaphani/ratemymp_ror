@@ -1,7 +1,7 @@
 RateUrMp::Application.routes.draw do
   resources :mp1s
 
-  get "mp/view"
+  get "mps/view"
 
   get "mp/new"
 resources :mps
