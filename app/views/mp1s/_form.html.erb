@@ -20,8 +20,8 @@
 
   <%= f.fields_for :pcs do |builder| %>
     
-    <div data-role="fieldcontain"><br /><br />
-      <b><%= builder.label :postcode, "Postcode" %></b>
+    <div data-role="fieldcontain" id="postcode">
+      <div><%= builder.label :postcode, "Postcode" %></div>
       <%= builder.text_field :postcode, :class => :postcode %>
     </div><br />
     
